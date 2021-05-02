@@ -10,8 +10,9 @@ android {
         applicationId "com.ttwcalc.statussaver"
         minSdkVersion 19
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode 4
+        versionName "2.0"
+        multiDexEnabled true
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -43,4 +44,6 @@ dependencies {
     implementation 'commons-io:commons-io:2.4'
     implementation 'org.apache.commons:commons-lang3:3.5'
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+    implementation 'com.google.android.gms:play-services-ads:20.0.0'
+    implementation 'com.android.support:multidex:1.0.3'
 }

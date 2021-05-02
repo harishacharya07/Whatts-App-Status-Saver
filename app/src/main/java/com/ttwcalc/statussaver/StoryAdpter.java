@@ -3,6 +3,7 @@ package com.ttwcalc.statussaver;
 import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
+import android.os.CountDownTimer;
 import android.os.Environment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +17,15 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.ads.AdError;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.FullScreenContentCallback;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.MobileAds;
+import com.google.android.gms.ads.initialization.InitializationStatus;
+import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 
 import org.apache.commons.io.FileUtils;
 
@@ -28,9 +38,12 @@ public class StoryAdpter extends RecyclerView.Adapter<StoryAdpter.StoryViewHolde
     private Context context;
     private ArrayList<Object> filesList;
 
+
+
     public StoryAdpter(Context context, ArrayList<Object> filesList) {
         this.context = context;
         this.filesList = filesList;
+
     }
 
     @NonNull
@@ -40,7 +53,12 @@ public class StoryAdpter extends RecyclerView.Adapter<StoryAdpter.StoryViewHolde
         View view = LayoutInflater.from(context).inflate(R.layout.card_row, null,
                 false);
         return new StoryViewHolder(view);
+
+
     }
+
+
+
 
     @Override
     public void onBindViewHolder(@NonNull StoryViewHolder holder, int position) {
